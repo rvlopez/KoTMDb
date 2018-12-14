@@ -1,4 +1,37 @@
 package com.example.rviciana.kotmdb.view.detail
 
-class MovieDetailPresenter {
+import com.example.rviciana.kotmdb.domain.bo.Movie
+import com.example.rviciana.kotmdb.domain.bo.MoviesResponse
+import com.example.rviciana.kotmdb.domain.usecase.GetMoviesRecommendationUseCase
+import javax.inject.Inject
+
+class MovieDetailPresenter @Inject constructor(
+    private val getMoviesRecommendationUseCase: GetMoviesRecommendationUseCase
+) : MovieDetailContract.Presenter {
+
+    internal var view: MovieDetailContract.View? = null
+
+    internal fun onSuccess(moviesResponse: MoviesResponse) {
+        view?.hideLoading()
+        view?.showRecommendations(moviesResponse.moviesList)
+    }
+
+    internal fun onError(throwable: Throwable) {
+        view?.hideLoading()
+        view?.hideRecommendations()
+    }
+
+    override fun setView(view: MovieDetailContract.View?) {
+        this.view = view
+    }
+
+    override fun onViewReady(movie: Movie) {
+        view?.showMovieDetails(movie)
+        view?.showLoading()
+        getMoviesRecommendationUseCase.execute(movie.id, ::onSuccess, ::onError)
+    }
+
+    override fun onStop() {
+        getMoviesRecommendationUseCase.dispose()
+    }
 }

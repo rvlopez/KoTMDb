@@ -5,8 +5,9 @@ import com.example.rviciana.kotmdb.domain.bo.MoviesResponse
 import io.reactivex.Scheduler
 import io.reactivex.disposables.Disposable
 import io.reactivex.disposables.Disposables
+import javax.inject.Inject
 
-class GetMoviesRecommendationUseCase(
+class GetMoviesRecommendationUseCase @Inject constructor(
         private val moviesRepository: MoviesRepository,
         private val subscribeOn: Scheduler,
         private val observeOn: Scheduler

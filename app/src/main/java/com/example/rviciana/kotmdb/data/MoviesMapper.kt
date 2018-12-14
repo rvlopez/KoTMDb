@@ -15,7 +15,7 @@ class MoviesMapper {
     private fun toMoviesList(moviesResponseDto: MoviesResponseDto) : List<Movie> =
             moviesResponseDto.results.map {
                 Movie(
-                        it.voteCount, it.id, it.name, it.video, it.voteAverage, it.popularity,
+                        it.voteCount, it.id, it.name, it.firstAirDate, it.video, it.voteAverage, it.popularity,
                         generatePosterImageUrl(it.posterPath), it.originalLang,
                         generateBackdropImageUrl(it.backdropPath), it.adult, it.overview
                 )

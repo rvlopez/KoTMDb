@@ -7,9 +7,11 @@ data class MovieDto (
         val voteCount: Int,
         val id: Int,
         val name: String,
+        @SerializedName("first_air_date")
+        val firstAirDate: String,
         val video: Boolean,
         @SerializedName("vote_average")
-        val voteAverage: Float,
+        val voteAverage: Double,
         val popularity: Float,
         @SerializedName("poster_path")
         val posterPath: String,

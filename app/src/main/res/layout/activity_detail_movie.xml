@@ -20,7 +20,8 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:toolbarId="@+id/toolbar">
 
             <ImageView
                     android:id="@+id/imageView"
@@ -35,6 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minHeight="?attr/actionBarSize"
+                    android:layout_marginTop="24dp"
                     android:theme="?attr/actionBarTheme"
                     app:layout_collapseMode="pin">
 
@@ -43,5 +45,9 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/movie_detail_layout" />
+
+    <include layout="@layout/error_layout" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -54,11 +54,11 @@ class MovieListActivity : RootActivity(), MovieListContract.View {
     }
 
     override fun initializeInjector() {
-        component.inject(this)
+        component.inject(this@MovieListActivity)
     }
 
     override fun initializePresenter() {
-        presenter.setView(this)
+        presenter.setView(this@MovieListActivity)
     }
 
     override fun getLayoutResourceId(): Int = R.layout.activity_list_movie

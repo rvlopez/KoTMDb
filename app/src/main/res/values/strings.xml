@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">koTMBb</string>
     <string name="error_message">Oops! Something went wrong :(</string>
+    <string name="also_like">Also like</string>
 </resources>
