@@ -26,6 +26,7 @@ class MovieDetailPresenter @Inject constructor(
     }
 
     override fun onViewReady(movie: Movie) {
+        view?.toolbarTitleShow(movie)
         view?.showMovieDetails(movie)
         view?.showLoading()
         getMoviesRecommendationUseCase.execute(movie.id, ::onSuccess, ::onError)

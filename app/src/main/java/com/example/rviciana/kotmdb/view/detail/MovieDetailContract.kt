@@ -6,7 +6,7 @@ interface MovieDetailContract {
 
     interface View {
         fun showMovieDetails(movie: Movie)
-        fun showTitleShow(movie: Movie)
+        fun toolbarTitleShow(movie: Movie)
         fun hideRecommendations()
         fun showRecommendations(movies: List<Movie>)
         fun showLoading()

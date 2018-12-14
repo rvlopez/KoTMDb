@@ -15,7 +15,7 @@
         android:allowBackup="false"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".view.list.MovieListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

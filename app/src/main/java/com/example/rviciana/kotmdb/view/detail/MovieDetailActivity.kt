@@ -5,12 +5,15 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rviciana.kotmdb.KoTMDbApplication
 import com.example.rviciana.kotmdb.R
 import com.example.rviciana.kotmdb.domain.bo.Movie
 import com.example.rviciana.kotmdb.extensions.hide
 import com.example.rviciana.kotmdb.extensions.loadWithTransition
 import com.example.rviciana.kotmdb.extensions.show
+import com.example.rviciana.kotmdb.navigator.Navigator
+import com.example.rviciana.kotmdb.navigator.NavigatorImpl
 import com.example.rviciana.kotmdb.view.RootActivity
 import com.example.rviciana.kotmdb.view.detail.di.MoviesDetailModule
 import kotlinx.android.synthetic.main.activity_detail_movie.*
@@ -43,6 +46,7 @@ class MovieDetailActivity : RootActivity(), MovieDetailContract.View {
         supportPostponeEnterTransition()
 
         initToolbar()
+        initRecyclerView()
         getExtras()
     }
 
@@ -54,6 +58,15 @@ class MovieDetailActivity : RootActivity(), MovieDetailContract.View {
     private fun initToolbar() {
         toolbar.setNavigationIcon(R.drawable.arrow_left)
         toolbar.setNavigationOnClickListener { onBackPressed() }
+        toolbar.title = "TESTING TITLE"
+    }
+
+    private fun initRecyclerView() {
+        with(recyclerView) {
+            adapter = MovieRecommendationsAdapter(NavigatorImpl(this@MovieDetailActivity))
+            layoutManager = LinearLayoutManager(this@MovieDetailActivity, LinearLayoutManager.HORIZONTAL, false)
+            setHasFixedSize(true)
+        }
     }
 
     private fun getExtras() {
@@ -85,8 +98,8 @@ class MovieDetailActivity : RootActivity(), MovieDetailContract.View {
         popularity.text = movie.popularity.toString()
     }
 
-    override fun showTitleShow(movie: Movie) {
-
+    override fun toolbarTitleShow(movie: Movie) {
+        toolbar.title = movie.name
     }
 
     override fun hideRecommendations() {

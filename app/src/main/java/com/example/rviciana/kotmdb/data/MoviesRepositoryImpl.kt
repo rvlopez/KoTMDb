@@ -14,7 +14,7 @@ class MoviesRepositoryImpl @Inject constructor(
                     .map { moviesMapper.map(it) }
 
     override fun getMovieRecommendations(id: Int): Single<MoviesResponse> =
-            moviesApi.getMoviesRecommendations(id, NetworkConfig.API_URL, NetworkConfig.API_LANG)
+            moviesApi.getMoviesRecommendations(id, NetworkConfig.API_KEY_TOKEN, NetworkConfig.API_LANG)
                     .map { moviesMapper.map(it) }
 
     override fun searchMovie(movie: String, page: Int): Single<MoviesResponse> =

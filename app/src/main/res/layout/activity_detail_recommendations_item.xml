@@ -41,4 +41,5 @@
                 android:shadowRadius="1.6"
                 android:textColor="@color/white"/>
     </RelativeLayout>
+
 </androidx.cardview.widget.CardView>
