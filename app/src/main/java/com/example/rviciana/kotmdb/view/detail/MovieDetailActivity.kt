@@ -58,7 +58,6 @@ class MovieDetailActivity : RootActivity(), MovieDetailContract.View {
     private fun initToolbar() {
         toolbar.setNavigationIcon(R.drawable.arrow_left)
         toolbar.setNavigationOnClickListener { onBackPressed() }
-        toolbar.title = "TESTING TITLE"
     }
 
     private fun initRecyclerView() {

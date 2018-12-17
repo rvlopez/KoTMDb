@@ -43,6 +43,6 @@ class MoviesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         backgroundImage.load(movie.backdropPath)
         title.text = movie.name
         rating.text = movie.voteAverage.toString()
-        setOnClickListener { navigator.navigateToMovieDetail(movie, backgroundImage, title) }
+        setOnClickListener { navigator.navigateToMovieDetail(movie, backgroundImage) }
     }
 }
