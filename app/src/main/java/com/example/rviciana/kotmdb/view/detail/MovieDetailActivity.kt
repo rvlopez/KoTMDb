@@ -12,7 +12,6 @@ import com.example.rviciana.kotmdb.domain.bo.Movie
 import com.example.rviciana.kotmdb.extensions.hide
 import com.example.rviciana.kotmdb.extensions.loadWithTransition
 import com.example.rviciana.kotmdb.extensions.show
-import com.example.rviciana.kotmdb.navigator.Navigator
 import com.example.rviciana.kotmdb.navigator.NavigatorImpl
 import com.example.rviciana.kotmdb.view.RootActivity
 import com.example.rviciana.kotmdb.view.detail.di.MoviesDetailModule
@@ -102,6 +101,7 @@ class MovieDetailActivity : RootActivity(), MovieDetailContract.View {
     }
 
     override fun hideRecommendations() {
+        recommendationTitle.hide()
         recyclerView.hide()
     }
 
