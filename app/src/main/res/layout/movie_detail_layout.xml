@@ -103,7 +103,7 @@
                 android:nestedScrollingEnabled="false"
                 android:visibility="gone"/>
 
-        <include layout="@layout/loading_layout"/>
+        <include layout="@layout/loading_recommendations_layout"/>
 
     </LinearLayout>
 

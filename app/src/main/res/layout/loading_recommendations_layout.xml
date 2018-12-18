@@ -9,4 +9,4 @@
         android:orientation="vertical"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/ripple_loading_animation" />
+        app:lottie_rawRes="@raw/preloader" />
