@@ -1,4 +1,4 @@
-package com.example.rviciana.kotmdb.data
+package com.example.rviciana.kotmdb.domain
 
 import com.example.rviciana.kotmdb.domain.bo.MoviesResponse
 import io.reactivex.Single

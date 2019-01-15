@@ -1,5 +1,6 @@
 package com.example.rviciana.kotmdb.data
 
+import com.example.rviciana.kotmdb.domain.MoviesRepository
 import com.example.rviciana.kotmdb.domain.bo.MoviesResponse
 import io.reactivex.Single
 import javax.inject.Inject

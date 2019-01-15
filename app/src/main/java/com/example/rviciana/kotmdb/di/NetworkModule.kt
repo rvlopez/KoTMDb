@@ -1,6 +1,7 @@
 package com.example.rviciana.kotmdb.di
 
 import com.example.rviciana.kotmdb.data.*
+import com.example.rviciana.kotmdb.domain.MoviesRepository
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import dagger.Module
 import dagger.Provides

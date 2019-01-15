@@ -1,6 +1,6 @@
 package com.example.rviciana.kotmdb.view.detail.di
 
-import com.example.rviciana.kotmdb.data.MoviesRepository
+import com.example.rviciana.kotmdb.domain.MoviesRepository
 import com.example.rviciana.kotmdb.domain.usecase.GetMoviesRecommendationUseCase
 import com.example.rviciana.kotmdb.view.detail.MovieDetailContract
 import com.example.rviciana.kotmdb.view.detail.MovieDetailPresenter

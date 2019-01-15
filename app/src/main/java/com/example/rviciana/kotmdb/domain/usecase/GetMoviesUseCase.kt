@@ -1,6 +1,6 @@
 package com.example.rviciana.kotmdb.domain.usecase
 
-import com.example.rviciana.kotmdb.data.MoviesRepository
+import com.example.rviciana.kotmdb.domain.MoviesRepository
 import com.example.rviciana.kotmdb.domain.bo.MoviesResponse
 import io.reactivex.Scheduler
 import io.reactivex.disposables.Disposable
