@@ -7,7 +7,7 @@ class MovieListPresenter(private val moviesUseCase: GetMoviesUseCase) : MovieLis
 
     internal var page: Int = 1
     internal var lastPage: Int = 1
-    internal var view: MovieListContract.View? = null
+    internal lateinit var view: MovieListContract.View
 
     private fun requestMovies() = moviesUseCase.execute(page, ::onSuccess, ::onError)
 
@@ -18,27 +18,29 @@ class MovieListPresenter(private val moviesUseCase: GetMoviesUseCase) : MovieLis
         if (movieList.isNotEmpty()) {
             when(page) {
                 1 -> {
-                    view?.showMovies(movieList)
-                    view?.hideLoading()
+                    view.showMovies(movieList)
+                    view.hideLoading()
                 }
-                else -> { view?.addMovies(movieList) }
+                else -> { view.addMovies(movieList) }
             }
+        } else {
+            view.hideLoading()
         }
     }
 
     internal fun onError(throwable: Throwable) {
         if (page == 1) {
-            view?.hideLoading()
-            view?.showError(throwable)
+            view.hideLoading()
+            view.showError(throwable)
         }
     }
 
-    override fun setView(view: MovieListContract.View?) {
+    override fun setView(view: MovieListContract.View) {
         this.view = view
     }
 
     override fun onViewReady() {
-        view?.showLoading()
+        view.showLoading()
         requestMovies()
     }
 

@@ -9,26 +9,26 @@ class MovieDetailPresenter @Inject constructor(
     private val getMoviesRecommendationUseCase: GetMoviesRecommendationUseCase
 ) : MovieDetailContract.Presenter {
 
-    internal var view: MovieDetailContract.View? = null
+    internal lateinit var view: MovieDetailContract.View
 
     internal fun onSuccess(moviesResponse: MoviesResponse) {
-        view?.hideLoading()
-        view?.showRecommendations(moviesResponse.moviesList)
+        view.hideLoading()
+        view.showRecommendations(moviesResponse.moviesList)
     }
 
     internal fun onError(throwable: Throwable) {
-        view?.hideLoading()
-        view?.hideRecommendations()
+        view.hideLoading()
+        view.hideRecommendations()
     }
 
-    override fun setView(view: MovieDetailContract.View?) {
+    override fun setView(view: MovieDetailContract.View) {
         this.view = view
     }
 
     override fun onViewReady(movie: Movie) {
-        view?.toolbarTitleShow(movie)
-        view?.showMovieDetails(movie)
-        view?.showLoading()
+        view.toolbarTitleShow(movie)
+        view.showMovieDetails(movie)
+        view.showLoading()
         getMoviesRecommendationUseCase.execute(movie.id, ::onSuccess, ::onError)
     }
 

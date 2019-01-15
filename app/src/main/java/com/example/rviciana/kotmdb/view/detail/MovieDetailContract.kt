@@ -14,7 +14,7 @@ interface MovieDetailContract {
     }
 
     interface Presenter {
-        fun setView(view: MovieDetailContract.View?)
+        fun setView(view: MovieDetailContract.View)
         fun onViewReady(movie: Movie)
         fun onStop()
     }

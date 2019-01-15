@@ -13,7 +13,7 @@ interface MovieListContract {
     }
 
     interface Presenter {
-        fun setView(view: MovieListContract.View?)
+        fun setView(view: MovieListContract.View)
         fun onViewReady()
         fun onBottomReached()
         fun onStop()
