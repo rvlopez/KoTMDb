@@ -13,7 +13,12 @@ class MovieDetailPresenter @Inject constructor(
 
     internal fun onSuccess(moviesResponse: MoviesResponse) {
         view.hideLoading()
-        view.showRecommendations(moviesResponse.moviesList)
+        val movieList = moviesResponse.moviesList
+        if (movieList.isNotEmpty()) {
+            view.showRecommendations(moviesResponse.moviesList)
+        } else {
+            view.hideRecommendations()
+        }
     }
 
     internal fun onError(throwable: Throwable) {
