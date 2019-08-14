@@ -18,7 +18,7 @@ licenses:
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
 before_install:
-  - chmod +x ./gradlew
+  - yes | sdkmanager "platforms;android-28"
 cache:
   directories:
     - $HOME/.m2
