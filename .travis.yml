@@ -2,5 +2,27 @@ env:
  global:
    - ADB_INSTALL_TIMEOUT=8 # 8 minutes
 language: android
+android:
+  components:
+    - tools
+    - build-tools-27.0.2
+    - android-23
+    - android-28
 jdk:
   - oraclejdk8
+script:
+  - ./gradlew
+licenses:
+    - 'android-sdk-license-.+'
+before_cache:
+  - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
+before_install:
+ - chmod +x gradlew
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+sudo: required
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
