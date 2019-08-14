@@ -12,7 +12,7 @@ android {
         applicationId "com.example.rviciana.kotmdb"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 1
+        versionCode 20190814
         versionName "1.0"
         testInstrumentationRunner "androidx.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
