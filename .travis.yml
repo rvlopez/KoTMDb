@@ -1,0 +1,6 @@
+env:
+ global:
+   - ADB_INSTALL_TIMEOUT=8 # 8 minutes
+language: android
+jdk:
+  - oraclejdk8
