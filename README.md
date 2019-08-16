@@ -1,4 +1,4 @@
-# KoTMDb (Kotlin/The Movie Database)
+# KoTMDb (Kotlin/The Movie Database) [![Build Status](https://travis-ci.org/rvlopez/KoTMDb.svg?branch=master)](https://travis-ci.org/rvlopez/KoTMDb)
 
 A very simple application made in Kotlin to improve my skills and learn more about this fantastic language. The application uses the TMDb API and consists of a screen where the most popular movies and series are listed and another where you can see more detailed information of any of them.
 
